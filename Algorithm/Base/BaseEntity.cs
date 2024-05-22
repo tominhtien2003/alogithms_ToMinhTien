@@ -18,11 +18,11 @@ namespace Algorithm.Base
         /// </summary>
         public virtual void Infor()
         {
-            Console.WriteLine("\nId : " + id);
+            Console.WriteLine("Id : " + id + "\n");
 
-            Console.WriteLine("Name : " + name);
+            Console.WriteLine("Name : " + name + "\n");
 
-            Console.WriteLine("Price : " + price);
+            Console.WriteLine("Price : " + price + "\n");
 
             Console.WriteLine("Quantity : " + quantity + "\n");
         }

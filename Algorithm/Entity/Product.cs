@@ -34,7 +34,7 @@ namespace Algorithm
         {
             base.Infor();
 
-            Console.WriteLine("CategoryID : " + categoryID);
+            Console.WriteLine("CategoryID : " + categoryID + "\n");
         }
     }
 }

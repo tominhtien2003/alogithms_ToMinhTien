@@ -2,7 +2,7 @@
 
 namespace Algorithm.Algorithm
 {
-    public class Queue<T>
+    public class Queuee<T>
     {
         private int capacity;
 
@@ -13,7 +13,7 @@ namespace Algorithm.Algorithm
         private int rear;
 
         private int count;
-        public Queue()
+        public Queuee()
         {
             capacity = 1;
 

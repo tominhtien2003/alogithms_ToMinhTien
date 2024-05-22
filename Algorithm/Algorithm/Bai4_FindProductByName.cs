@@ -10,18 +10,15 @@ namespace Algorithm
         /// </summary>
         /// <param name="nameProduct"></param>
         /// <returns></returns>
-        public static BaseEntity FindProduct(string nameProduct)
+        public static void FindProduct(string nameProduct)
         {
             foreach (BaseEntity product_item in Program.stores[Program.PRODUCT])
             {
                 if (product_item.name == nameProduct)
                 {
-                    return product_item;
+                    product_item.Infor();
                 }
             }
-            Console.WriteLine("Don't have object product with name is " + nameProduct);
-
-            return null;
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Algorithm.Algorithm
         {
             List<BaseEntity> products = Program.stores[Program.PRODUCT];
 
-            for (int idx_i = 0; idx_i < products.Count-1; idx_i++)
+            for (int idx_i = 0; idx_i < products.Count; idx_i++)
             {
                 for (int idx_j = 0 ; idx_j < products.Count; idx_j++)
                 {

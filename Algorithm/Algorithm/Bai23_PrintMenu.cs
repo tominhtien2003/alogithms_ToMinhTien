@@ -14,18 +14,18 @@ namespace Algorithm.Algorithm
         {
             SortMenuByParentId();
 
-            string dash = "--";
+            string dash = "";
 
-            int prev_Parent = -Program.menus[0].id;
+            int prev_Parent = Program.menus[0].parent_id;
 
             foreach (Menu item in Program.menus)
             {
-                Console.Write(dash + item.name);
-
                 if (item.parent_id != prev_Parent)
                 {
                     dash += "--";
+                    prev_Parent = item.parent_id;
                 }
+                Console.Write(dash + item.name + "\n");
             }
         }
         /// <summary>

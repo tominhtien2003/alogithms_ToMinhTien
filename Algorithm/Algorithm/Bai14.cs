@@ -11,17 +11,14 @@ namespace Algorithm.Algorithm
         /// Take list name category follow categoryID in product
         /// </summary>
         /// <returns></returns>
-        public static List<string> Bai14Function()
+        public static void Bai14Function()
         {
-            List<string> res = new List<string>();
-
             List<BaseEntity> products = Program.stores[Program.PRODUCT];
 
             for (int i=0;i< products.Count; i++)
             {
-                res.Add(FindCategoryById(((Product)products[i]).categoryID));
+                Console.WriteLine(FindCategoryById(((Product)products[i]).categoryID) + "\n");
             }
-            return res;
         }
         /// <summary>
         /// return name of category with id

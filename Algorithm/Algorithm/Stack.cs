@@ -2,14 +2,14 @@
 
 namespace Algorithm.Algorithm
 {
-    public class Stack<T>
+    public class Stackk<T>
     {
         private T[] data;
 
         private int capacity;
 
         private int top;
-        public Stack()
+        public Stackk()
         {
             capacity = 1;
 

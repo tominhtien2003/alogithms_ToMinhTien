@@ -15,7 +15,7 @@ namespace Algorithm.Algorithm
             {
                 return salary;
             }
-            return TakeSalaryByRecursion(salary * .1f, --n);
+            return TakeSalaryByRecursion(salary + salary * .1f, --n);
         }
         /// <summary>
         /// Take salary by function Normal
@@ -27,7 +27,7 @@ namespace Algorithm.Algorithm
         {
             for (int i = 0; i < n; i++)
             {
-                salary = salary * .1f;
+                salary += salary * .1f;
             }
             return salary;
         }

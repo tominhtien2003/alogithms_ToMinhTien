@@ -9,16 +9,18 @@ namespace Algorithm.Entity
 {
     public class Category : BaseEntity
     {
-        public Category(int id, string name, float price, int quantity)
+        public Category(int id, string name)
         {
             this.id = id;
 
             this.name = name;
+        }
 
-            this.price = price;
+        public override void Infor()
+        {
+            Console.WriteLine("Id : " + id + "\n");
 
-            this.quantity = quantity;
-
+            Console.WriteLine("Name : " + name + "\n");
         }
         /// <summary>
         /// Get self

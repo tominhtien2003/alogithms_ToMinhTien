@@ -11,7 +11,7 @@ namespace Algorithm.Algorithm
         /// Take max price in list product
         /// </summary>
         /// <returns></returns>
-        public static float MaxByPriceProduct()
+        public static void MaxByPriceProduct()
         {
             float result = float.MinValue;
 
@@ -21,7 +21,7 @@ namespace Algorithm.Algorithm
             {
                 result = Math.Max(products[idx].price, result);
             }
-            return result;
+            Console.WriteLine(result);
         }
     }
 }

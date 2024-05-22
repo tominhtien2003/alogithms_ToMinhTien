@@ -10,7 +10,7 @@ namespace Algorithm.Algorithm
         /// Take min price in list product
         /// </summary>
         /// <returns></returns>
-        public static float MinByPriceProduct()
+        public static void MinByPriceProduct()
         {
             float result = float.MaxValue;
 
@@ -20,7 +20,7 @@ namespace Algorithm.Algorithm
             {
                 result = Math.Min(products[idx].price, result);
             }
-            return result;
+            Console.WriteLine(result);
         }
     }
 }

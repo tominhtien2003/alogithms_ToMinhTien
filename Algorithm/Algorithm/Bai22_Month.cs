@@ -11,29 +11,23 @@ namespace Algorithm.Algorithm
         /// <param name="money"></param>
         /// <param name="rate"></param>
         /// <returns></returns>
-        public static int TakeMonthByRecursion(float money,int rate)
+        public static int TakeMonthByRecursion(float money,float rate,int count)
         {
-            if (money == 0)
+            if (rate * count >= 1)
             {
-                return 0;
+                return count;
             }
-            return TakeMonthByRecursion(money - money * rate, rate) + 1;
+            return TakeMonthByRecursion(money, rate, count + 1);
         }
         /// <summary>
-        /// Take month follow fuction normal
+        /// Take month follow fuction n
         /// </summary>
         /// <param name="money"></param>
         /// <param name="rate"></param>
         /// <returns></returns>
-        public static int TakeMonthByNormal(float money, int rate)
+        public static int TakeMonthByNormal(float money, float rate)
         {
-            int res = 0;
-            while (money > 0)
-            {
-                money -= money * rate;
-                ++res;
-            }
-            return res;
+            return (int)Math.Ceiling(1/rate);
         }
     }
 }
