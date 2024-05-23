@@ -11,7 +11,7 @@ namespace Algorithm.Algorithm
         /// <param name="money"></param>
         /// <param name="rate"></param>
         /// <returns></returns>
-        public static int TakeMonthByRecursion(float money,float rate,int count)
+        public static int TakeMonthByRecursion(float money,float rate,int count = 0)
         {
             if (rate * count >= 1)
             {

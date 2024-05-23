@@ -111,9 +111,9 @@ namespace Algorithm
 
             //Bai6_FindProductByPrice.FindProductByPrice(120);
 
-            Bai11_SortByPriceProductByBubbleSort.SortByPrice();
+            //Bai11_SortByPriceProductByBubbleSort.SortByPrice();
 
-            PrintListByTypename(PRODUCT);
+            //PrintListByTypename(PRODUCT);
 
             //Bai12_SortByNameProductByInserttion.SortByName();
 
@@ -133,7 +133,7 @@ namespace Algorithm
 
             //Console.WriteLine(Bai21_TakeSalary.TakeSalaryByNormal(20,1));
 
-            //Console.WriteLine(Bai22_Month.TakeMonthByRecursion(20, .5f , 0));
+            //Console.WriteLine(Bai22_Month.TakeMonthByRecursion(20, .5f));
 
             //Console.WriteLine(Bai22_Month.TakeMonthByNormal(20, .5f));
 
@@ -165,13 +165,6 @@ namespace Algorithm
             //    queuee.Front().Infor();
 
             //    queuee.Pop();
-            //}
-
-            //List<string> res = Bai14.Bai14Function();
-
-            //foreach (string name in res)
-            //{
-            //    Console.WriteLine(name);
             //}
 
         }
