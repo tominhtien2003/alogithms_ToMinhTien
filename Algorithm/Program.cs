@@ -137,9 +137,9 @@ namespace Algorithm
 
             //Console.WriteLine(Bai22_Month.TakeMonthByNormal(20, .5f));
 
-            //InitMenu();
+            InitMenu();
 
-            //Bai23_PrintMenu.PrintMenu();
+            Bai23_PrintMenu.PrintMenu();
 
             //Stackk<BaseEntity> stackk = new Stackk<BaseEntity>();
 

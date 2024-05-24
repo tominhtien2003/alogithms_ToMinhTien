@@ -10,17 +10,17 @@ namespace Algorithm.Algorithm
         /// Take min price in list product
         /// </summary>
         /// <returns></returns>
-        public static void MinByPriceProduct()
+        public static float MinByPriceProduct()
         {
-            float result = float.MaxValue;
-
             List<BaseEntity> products = Program.stores[Program.PRODUCT];
 
-            for (int idx = 0; idx < products.Count - 1; idx++)
+            float result = products[0].price;
+
+            for (int idx = 1; idx < products.Count; idx++)
             {
                 result = Math.Min(products[idx].price, result);
             }
-            Console.WriteLine(result);
+            return result;
         }
     }
 }

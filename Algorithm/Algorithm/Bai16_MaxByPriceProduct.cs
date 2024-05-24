@@ -11,17 +11,16 @@ namespace Algorithm.Algorithm
         /// Take max price in list product
         /// </summary>
         /// <returns></returns>
-        public static void MaxByPriceProduct()
+        public static float MaxByPriceProduct()
         {
-            float result = float.MinValue;
-
             List<BaseEntity> products = Program.stores[Program.PRODUCT];
+            float result = products[0].price;
 
-            for (int idx = 0; idx < products.Count - 1; idx++)
+            for (int idx = 1; idx < products.Count; idx++)
             {
                 result = Math.Max(products[idx].price, result);
             }
-            Console.WriteLine(result);
+            return result;
         }
     }
 }

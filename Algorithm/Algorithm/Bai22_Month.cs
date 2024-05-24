@@ -8,16 +8,18 @@ namespace Algorithm.Algorithm
         /// <summary>
         /// Take Month follow Recursion
         /// </summary>
-        /// <param name="money"></param>
-        /// <param name="rate"></param>
+        /// <param name="money">Money start</param>
+        /// <param name="rate">sale</param>
         /// <returns></returns>
-        public static int TakeMonthByRecursion(float money,float rate,int count = 0)
+        public static int TakeMonthByRecursion(float moneyStart,float rate,float targetMoney = 0)
         {
-            if (rate * count >= 1)
+            targetMoney += moneyStart * rate;
+
+            if (targetMoney >= moneyStart)
             {
-                return count;
-            }
-            return TakeMonthByRecursion(money, rate, count + 1);
+                return 1;
+            }           
+            return TakeMonthByRecursion(moneyStart, rate, targetMoney) + 1;
         }
         /// <summary>
         /// Take month follow fuction n
@@ -27,7 +29,16 @@ namespace Algorithm.Algorithm
         /// <returns></returns>
         public static int TakeMonthByNormal(float money, float rate)
         {
-            return (int)Math.Ceiling(1/rate);
+            float targetMoney = 0;
+
+            int count = 1;
+            while (targetMoney < money)
+            {
+                targetMoney += money * rate;
+
+                ++count;
+            }
+            return count;
         }
     }
 }

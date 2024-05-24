@@ -1,54 +1,63 @@
 ﻿using Algorithm.Entity;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace Algorithm.Algorithm
 {
     public static class Bai23_PrintMenu
     {
+        private static HashSet<Tuple<int, int>> visited = new HashSet<Tuple<int, int>>();
         /// <summary>
         /// Print list menu
         /// </summary>
         public static void PrintMenu()
         {
-            SortMenuByParentId();
+            foreach (Menu menu in Program.menus)
+            {
+                var keyParent = new Tuple<int, int>(menu.id, menu.ParentId);
+                if (!visited.Contains(keyParent))
+                {
+                    visited.Add(keyParent);
 
-            string dash = "";
+                    List<string> res = new List<string>();
 
-            int prev_Parent = Program.menus[0].parent_id;
+                    res.Add(menu.name);
+
+                    FindFamily(menu.id, ref res);
+
+                    PrintMenuRes(res);
+                }
+            }
+        }
+        
+        private static void FindFamily(int parentId,ref List<string>res,string dash = "--")
+        {
+            if (parentId == 0) return;
 
             foreach (Menu item in Program.menus)
             {
-                if (item.parent_id != prev_Parent)
+                var keyParent = new Tuple<int, int>(item.id, item.ParentId);
+
+                if (!visited.Contains(keyParent) && item.ParentId == parentId)
                 {
-                    dash += "--";
-                    prev_Parent = item.parent_id;
+                    visited.Add(keyParent);
+
+                    res.Add(dash + item.name);
+
+                    FindFamily(item.id,ref res,dash+"--");
                 }
-                Console.Write(dash + item.name + "\n");
             }
         }
-        /// <summary>
-        /// Sort list menu
-        /// </summary>
-        private static void SortMenuByParentId()
+
+        private static void PrintMenuRes(List<string> res)
         {
-            List<Menu> menus = Program.menus;
-
-            for (int i = 0; i < menus.Count-1; i++)
+            foreach (string item in res)
             {
-                for (int j=i+1;j<menus.Count;j++)
-                {
-                    if (menus[i].parent_id > menus[j].parent_id)
-                    {
-                        Menu temp = menus[i];
-
-                        menus[i] = menus[j];
-
-                        menus[j] = temp;
-                    }
-                }
+                Console.WriteLine(item);
             }
         }
+        
     }
 }

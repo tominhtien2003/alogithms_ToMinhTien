@@ -1,5 +1,4 @@
 ﻿using Algorithm.Base;
-using System;
 using System.Collections.Generic;
 
 
@@ -12,21 +11,25 @@ namespace Algorithm.Algorithm
         /// </summary>
         public static void SortByName()
         {
-            List<BaseEntity> categorys = Program.stores[Program.CATEGORY];
+            List<BaseEntity> products = Program.stores[Program.PRODUCT];
 
-            for (int i = 0; i < categorys.Count; i++)
+            for (int i = 0; i < products.Count; i++)
             {
-                for (int j = i; j > 0 && string.Compare(categorys[j].name, categorys[j - 1].name) < 0; j--)
+                for (int j = i; j > 0; j--)
                 {
-                    BaseEntity temp = categorys[j];
+                    var item1 = (Product)products[j];
+                    var item2 = (Product)products[j - 1];
+                    if (item1.categoryID > item2.categoryID)
+                    {
+                        BaseEntity temp = products[j];
 
-                    categorys[j] = categorys[j - 1];
+                        products[j] = products[j - 1];
 
-                    categorys[j - 1] = temp;
-
+                        products[j - 1] = temp;
+                    }   
                 }
             }
-            Program.stores[Program.CATEGORY] = categorys;
+            Program.stores[Program.PRODUCT] = products;
         }
     }
 }
