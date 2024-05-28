@@ -31,6 +31,12 @@ namespace Algorithm.Algorithm
                 }
             }
         }
+        /// <summary>
+        /// Take Genealogy with parent have id is parentId
+        /// </summary>
+        /// <param name="parentId"></param>
+        /// <param name="res"></param>
+        /// <param name="dash"></param>
         
         private static void FindFamily(int parentId,ref List<string>res,string dash = "--")
         {
